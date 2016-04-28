@@ -1,0 +1,30 @@
+{
+  "name": "gitbook-plugin-tasklist",
+  "version": "0.1.0",
+  "description": "A plugin for adding tasklists to gitbook markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danleavitt0/gitbook-plugin-tasklist.git"
+  },
+  "author": "danleavitt0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danleavitt0/gitbook-plugin-tasklist/issues"
+  },
+  "homepage": "https://github.com/danleavitt0/gitbook-plugin-tasklist#readme",
+  "dependencies": {
+    "github-markdown-css": "^2.2.1",
+    "marked": "^0.3.5"
+  },
+  "engines": {
+    "gitbook": ">=2.5.0"
+  },
+  "devDependencies": {
+    "gitbook-tester": "^1.4.1",
+    "tape": "^4.5.1"
+  }
+}
