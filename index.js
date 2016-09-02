@@ -12,6 +12,8 @@ renderer.listitem = function (text) {
   }
 }
 
+console.log('stuff')
+
 module.exports = {
   website: {
     assets: './assets',
