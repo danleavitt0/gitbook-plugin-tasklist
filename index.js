@@ -11,10 +11,6 @@ renderer.listitem = function (text) {
     return '<li>' + text + '</li>'
   }
 }
-renderer.link = function (href, title, text) {
-  var link = marked.Renderer.prototype.link.call(this, href, title, text)
-  return link.replace('<a', '<a target="_blank"')
-}
 
 marked.setOptions({
   renderer: renderer,
@@ -69,8 +65,8 @@ module.exports = {
     ]
   },
   hooks: {
-    'page': function (page) {
-      page.content = marked(page.content)
+    'page:before': function (page) {
+      page.content = page.content.replace('<a', '<a target="_blank"')
       return page
     }
   },
