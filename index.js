@@ -11,6 +11,10 @@ renderer.listitem = function (text) {
     return '<li>' + text + '</li>'
   }
 }
+renderer.link = function (href, title, text) {
+  var link = marked.Renderer.prototype.link.call(this, href, title, text)
+  return link.replace('<a', '<a target="_blank"')
+}
 
 marked.setOptions({
   renderer: renderer,
@@ -63,6 +67,12 @@ module.exports = {
       'github-markdown.css',
       'main.css'
     ]
+  },
+  hooks: {
+    'page': function (page) {
+      page.content = marked(page.content)
+      return page
+    }
   },
   blocks: {
     tlist: {
