@@ -18,7 +18,7 @@ marked.setOptions({
   tables: true,
   breaks: false,
   pedantic: false,
-  sanitize: true,
+  sanitize: false,
   smartLists: true,
   smartypants: false
 })
@@ -70,18 +70,28 @@ module.exports = {
         return marked(block.body)
       }
     },
+    link: {
+      process: function (block) {
+        var text = block.kwargs.text
+        var link = block.kwargs.link
+
+        return '<a href="' + link + '" target="_blank">' + text + '</a>'
+      }
+    },
     title: {
       process: function (block) {
         var title = block.kwargs.title
         var subtitle = block.kwargs.subtitle
+          ? '<h4 class="page-subtitle-text">' + subtitle + '</h4>'
+          : ''
         var color = block.kwargs.color
         return '<div style="background-color: ' +
         color +
         ';" class="page-title"><h2 class="page-title-text">' +
         title +
-        '</h2><h4 class="page-subtitle-text">' +
+        '</h2>' +
         subtitle +
-        '</h4></div><div class="space"></div>'
+        '</div><div class="space"></div>'
       }
     },
     table: {
