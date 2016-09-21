@@ -82,7 +82,7 @@ module.exports = {
       process: function (block) {
         var title = block.kwargs.title
         var subtitle = block.kwargs.subtitle
-          ? '<h4 class="page-subtitle-text">' + subtitle + '</h4>'
+          ? '<h4 class="page-subtitle-text">' + block.kwargs.subtitle + '</h4>'
           : ''
         var color = block.kwargs.color
         return '<div style="background-color: ' +
