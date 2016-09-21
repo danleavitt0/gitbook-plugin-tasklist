@@ -234,22 +234,22 @@ table.action-table {
   vertical-align: middle;
 }
 .icon.objectives {
-  background-image: url('/images/objectives.png')
+  background-image: url('../images/objectives.png')
 }
 .icon.agenda {
-  background-image: url('/images/agenda.png');
+  background-image: url('../images/agenda.png');
 }
 .icon.vocab {
-  background-image: url('/images/vocab.png');
+  background-image: url('../images/vocab.png');
 }
 .icon.materials {
-  background-image: url('/images/materials.png');
+  background-image: url('../images/materials.png');
 }
 .icon.standards {
-  background-image: url('/images/standards.png');
+  background-image: url('../images/standards.png');
 }
 .icon.activity {
-  background-image: url('/images/activity.png');
+  background-image: url('../images/activity.png');
 }
 hr:nth-child(4n-3) {
   background: #b8674e;
