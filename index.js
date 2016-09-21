@@ -66,7 +66,7 @@ module.exports = {
   },
   hooks: {
     'page': function (page) {
-      page.content = page.content.replace('<a', '<a target="_blank"')
+      page.content = page.content.replace(/<a/g, '<a target="_blank"')
       return page
     }
   },
