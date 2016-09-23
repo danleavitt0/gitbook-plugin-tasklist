@@ -25,7 +25,7 @@ marked.setOptions({
 
 function getGroups (str) {
   var obj = {}
-  var re = new RegExp('(\\d+)\\)\\s+([\\s\\S]*?)(?=(?:\\d+\\)|$))', 'g')
+  var re = new RegExp('(\\d+)\\)\\s+([\\s\\S]*?)(?=(?:[^\\w]\\d+\\)|$))', 'g')
   var match = []
   while (match != null) {
     match = re.exec(str)
