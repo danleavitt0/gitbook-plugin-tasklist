@@ -102,7 +102,9 @@ module.exports = {
     },
     table: {
       process: function (block) {
-        var parts = block.body.split(',,,').map((parts, i) => getGroups(parts.replace(/\\/g, '')))
+        var parts = block.body.split(',,,').map(function (parts, i) {
+          return getGroups(parts.replace(/\\/g, ''))
+        })
         var header1 = block.args[0] || 'Teacher Actions'
         var header2 = block.args[1] || 'Student Actions'
         return '<table class="action-table"><thead><tr><th>' +
