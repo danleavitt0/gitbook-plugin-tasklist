@@ -114,6 +114,14 @@ module.exports = {
         return '<a href="' + link + '" target="_blank">' + text + '</a>'
       }
     },
+    length: {
+      process: function (block) {
+        var length = block.args[0]
+        return '<div class="length-wrapper"><div class="icon agenda"></div><div class="text"><strong>Length: </strong>' +
+        length +
+        '</div></div>'
+      }
+    },
     title: {
       process: function (block) {
         var title = block.kwargs.title
