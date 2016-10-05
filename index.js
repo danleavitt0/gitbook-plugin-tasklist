@@ -36,7 +36,7 @@ function wrapStudentActions (str) {
   return newStr
 }
 
-function getGroups (str) {
+function getNumbers (str) {
   var arr = []
   var re = new RegExp('(\\d+)\\)\\s+([\\s\\S]*?)(?=(?:[^\\w]\\d+\\)|$))', 'g')
   var match = []
@@ -52,6 +52,19 @@ function getGroups (str) {
     }
   }
   return arr
+}
+
+function getGroups (str) {
+  var obj = {}
+  var re = new RegExp('(\\d+)\\)\\s+([\\s\\S]*?)(?=(?:[^\\w]\\d+\\)|$))', 'g')
+  var match = []
+  while (match != null) {
+    match = re.exec(str)
+    if (match != null) {
+      obj[match[1]] = match[2]
+    }
+  }
+  return obj
 }
 
 function getRows (firstC, secondC) {
@@ -74,6 +87,37 @@ var palette = [
   '#e8f3ed'
 ]
 
+var activityHeader = {
+  process: function (block) {
+    var title = block.kwargs.title
+    var icon = block.kwargs.icon
+    return '<div class="section-header"><div class="icon ' +
+    icon +
+    '"></div><div class="title">' +
+    title +
+    '</div></div></div>'
+  }
+}
+
+var overviewHeader = {
+  process: function (block) {
+    var title = block.kwargs.title
+    var icon = block.kwargs.icon
+    var hideHR = typeof (block.kwargs.hideHR) === 'undefined' ? false : block.kwargs.hideHR
+    var color = palette[Math.floor(Math.random() * palette.length)]
+    var display = hideHR ? 'none' : 'block'
+    return '<div class="overview-section"><div class="icon ' +
+    icon +
+    '"></div><div class="title">' +
+    title +
+    '</div></div><hr style="margin-top: 1em; border: 1px solid ' +
+    color +
+    '; height:1px; display: ' +
+    display +
+    '"></hr>'
+  }
+}
+
 module.exports = {
   website: {
     assets: './assets',
@@ -94,15 +138,10 @@ module.exports = {
         return marked(block.body)
       }
     },
-    studentActions: {
-      process: function (block) {
-        return '<div class="student-actions">' + marked(block.body) + '</div>'
-      }
-    },
     activityBody: {
       process: function (block) {
         var body = wrapStudentActions(block.body)
-        var numberGroups = getGroups(body.replace(/\\/g, ''))
+        var numberGroups = getNumbers(body.replace(/\\/g, ''))
         return '<div class="activity-body">' + numberGroups.join('') + '</div>'
       }
     },
@@ -158,36 +197,5 @@ module.exports = {
     activityHeader: activityHeader,
     overviewSection: overviewHeader,
     overviewHeader: overviewHeader
-  }
-}
-
-var activityHeader = {
-  process: function (block) {
-    var title = block.kwargs.title
-    var icon = block.kwargs.icon
-    return '<div class="section-header"><div class="icon ' +
-    icon +
-    '"></div><div class="title">' +
-    title +
-    '</div></div></div>'
-  }
-}
-
-var overviewHeader = {
-  process: function (block) {
-    var title = block.kwargs.title
-    var icon = block.kwargs.icon
-    var hideHR = typeof (block.kwargs.hideHR) === 'undefined' ? false : block.kwargs.hideHR
-    var color = palette[Math.floor(Math.random() * palette.length)]
-    var display = hideHR ? 'none' : 'block'
-    return '<div class="overview-section"><div class="icon ' +
-    icon +
-    '"></div><div class="title">' +
-    title +
-    '</div></div><hr style="margin-top: 1em; border: 1px solid ' +
-    color +
-    '; height:1px; display: ' +
-    display +
-    '"></hr>'
   }
 }
