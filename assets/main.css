@@ -1,4 +1,4 @@
-/* CSS for website */
+d/* CSS for website */
 * {
   font-family: 'Futura', sans-serif;
 }
@@ -172,11 +172,12 @@ tr {
 }
 .section-header .title {
   font-size: 28px;
+  margin-bottom: 1em;
   text-transform: uppercase;
   font-weight: 700;
 }
 .section-header .subtitle {
-  margin-bottom: 1em;
+  font-size: 20px;
 }
 .section-header hr {
   position: absolute;
