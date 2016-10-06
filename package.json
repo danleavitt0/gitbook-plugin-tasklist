@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-tasklist",
-  "version": "0.3.0",
+  "version": "0.5.3",
   "description": "A plugin for adding tasklists to gitbook markdown",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/danleavitt0/gitbook-plugin-tasklist#readme",
   "dependencies": {
     "github-markdown-css": "^2.2.1",
-    "marked": "^0.3.5"
+    "marked": "^0.3.6"
   },
   "engines": {
     "gitbook": ">=2.5.0"

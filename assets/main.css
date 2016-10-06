@@ -48,6 +48,10 @@ tr {
   padding-left: 12px;
   background-color: #fff;
 }
+.student-actions {
+  background-color: #FEF9F0;
+  padding:10px;
+}
 .activity-header .activity-icon {
   width: 150px;
   height: 150px;
@@ -216,6 +220,34 @@ table.action-table {
   margin-left: 3.2em;
   position: relative;
   top: -30px;
+}
+.activity-body .instruction .number {
+	content:counter(rowNumber); /* Use the counter as content */
+	/* Position and style the number */
+  display: inline-block;
+  top: -1px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+  border-radius: 2em;
+	width:2.1em;
+	/* Some space between the number and the content in browsers that support
+	   generated content but not positioning it (Camino 2 is one example) */
+	margin-right:8px;
+	padding:4px;
+	color:#4D425D;
+	background:#F7B8B1;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	text-align:center;
+}
+.activity-body .instruction .content {
+  margin-left: 3.2em;
+  position: relative;
+  top: -30px;
+}
+.activity-body .instruction .student-actions ol {
+  margin-bottom: 0;
 }
 .length-wrapper {
   margin-bottom: 1em;
