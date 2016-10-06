@@ -90,12 +90,15 @@ var palette = [
 var activityHeader = {
   process: function (block) {
     var title = block.kwargs.title
+    var subtitle = block.kwargs.subtitle
     var icon = block.kwargs.icon
     return '<div class="section-header"><div class="icon ' +
     icon +
     '"></div><div class="title">' +
     title +
-    '</div></div></div>'
+    '</div><div>' +
+    subtitle +
+    '</div></div>'
   }
 }
 
