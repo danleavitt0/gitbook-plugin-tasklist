@@ -121,6 +121,11 @@ tr {
   padding-right: 24px;
   max-width: 0;
 }
+.markdown-section blockquote blockquote {
+  border: none;
+  background-color: #FEF9F0;
+  margin-left: -15px;
+}
 .markdown-section .action-table td p:first-child {
   display:inline;
 }
@@ -143,7 +148,7 @@ tr {
 }
 .markdown-section .action-table .second {
   border-left: 1px dotted #F8B8A9;
-  background-color: #FEF9F0
+  background-color: #FEF9F0;
 }
 .markdown-section .action-table tr:nth-child(2n) {
     background-color: #fff;
@@ -161,7 +166,7 @@ tr {
   align-items: center;
   align-content: center;
   position: relative;
-  margin-top: 6em;
+  margin-top: 3.5em;
 }
 .section-header .icon {
   height: 100px;
