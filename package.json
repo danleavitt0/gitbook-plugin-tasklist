@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-tasklist",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "A plugin for adding tasklists to gitbook markdown",
   "main": "index.js",
   "scripts": {
