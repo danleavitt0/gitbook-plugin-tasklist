@@ -66,7 +66,7 @@ module.exports = {
   },
   hooks: {
     'page': function (page) {
-      page.content = page.content.replace(/(<a)(.*?)(?=.pdf)/g, '$1 target="_blank"$2')
+      page.content = page.content.replace(/(<a)([^\>]*?)(?=.pdf)/g, '$1 target="_blank"$2')
       // So hacky
       if (page.content.search(/vui-block/) === -1) {
         page.content = '<div style="max-width: 75%; margin: 0 auto;">' + page.content + '</div>'
